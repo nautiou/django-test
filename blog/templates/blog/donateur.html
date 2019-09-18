@@ -1,0 +1,24 @@
+{% extends 'blog/home.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<h1 class="text-center">Donateurs</h1>
+
+<div class="card col-lg-6 mx-auto">
+    <img class="card-img-top" src="{% static 'images/torcy_logo.svg' %}" alt="Torcy - Marne la vallee" style="width: 30%;"/>
+
+    <div class="card-body">
+        <p class="card-text">Le club informatique Microtel Torcy est une association loi 1901.
+        Notre but est de partager nos connaissances avec le plus grand nombre.<br/>
+        Pour cela nous avons besoin de renouveller notre matériel et nos logiciels régulièrement.
+        Nous recherchons donc de gentils donateurs qui nous permettraient de continuer dans cette voie du partage de connaissance.<br/>
+        En échange, nous proposons une présence du donateur sous forme de bannière ou logo.<br/>Pour tout renseignement complémentaire,
+            n'hésitez pas à nous contacter par <strong>e-mail</strong>, par <strong>telephone</strong> ou nous laisser un message sur notre répondeur.
+        </p>
+        <p class="card-text"><strong>Téléphone: 09 50 77 00 68</strong></p>
+    </div>
+</div>
+
+{% endblock %}

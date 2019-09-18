@@ -1,0 +1,25 @@
+.microtel-title {
+    font-family: 'Squada One', cursive;
+    font-size: 2rem;
+}
+
+.microtel-sidebar {
+    top: 74px;
+    height: calc(100vh - 74px);
+    z-index: 100;
+}
+
+.microtel-sidebar .nav-link.active {
+    color: #007bff !important;
+}
+
+.microtel-event {
+    margin-bottom: 1rem;
+}
+.microtel-event:last-child {
+    margin-bottom: 0px;
+}
+
+[role=main] {
+    margin-top: 74px;
+}

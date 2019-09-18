@@ -1,0 +1,84 @@
+
+{% extends 'blog/base.html' %}
+
+{% block login %}
+{% if user.is_authenticated  %}
+    <p class="nav-link">
+        <span class="text-white mr-3">Bonjour, {{ user.username }}</span>
+        <a href="{% url 'logout' %}"><i data-feather="log-out"></i></a>
+    </p>
+{% else %}
+    <!-- Button trigger modal -->
+    <a class="nav-link" href="" data-toggle="modal" data-target="#modalLogIn">
+        <i data-feather="log-in"></i>
+        Se connecter
+    </a>
+{% endif %}
+{% endblock %}
+
+
+{% block modals %}
+<!-- Modals -->
+<div class="modal fade" id="modalLogIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <form method="post" action="login">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Connexion</h5>
+          </div>
+          <div class="modal-body row">
+              {% csrf_token %}
+              <div class="col">
+                  <p>Nom utilisateur</p>
+                  <input type="text" name="username" placeholder="Utilisateur">
+              </div>
+              <div class="col">
+                  <p>Mot de passe</p>
+                  <input type="password" name="password" placeholder="Mot de passe">
+              </div>
+          </div>
+          <a class="ml-3" href="" data-dismiss="modal" data-toggle="modal" data-target="#modalCreate">Creer un compte</a>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button type="submit" class="btn btn-primary">Connexion</button>
+          </div>
+        </div>
+      </form>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <form method="post" action="createuser">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Connexion</h5>
+          </div>
+          <div class="modal-body">
+              {% csrf_token %}
+              <div class="row">
+                  <div class="col">
+                      <p>Nom utilisateur</p>
+                      <input type="text" name="username" placeholder="Utilisateur">
+                  </div>
+                  <div class="col">
+                      <p>Mot de passe</p>
+                      <input type="password" name="password" placeholder="Mot de passe">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <p>Adresse e-mail</p>
+                      <input type="email" name="mail" placeholder="mail@mail.fr">
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button type="submit" class="btn btn-primary">Connexion</button>
+          </div>
+        </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

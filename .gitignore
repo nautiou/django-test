@@ -1,10 +1,9 @@
 *.pyc
 *~
-/microtel/__pycache__
-/microtel/__pycache__/*
+/__pycache__/
 env
+venv
 myvenv
 db.sqlite3
-/static
 .DS_Store
-manage.py
+.idea

@@ -13,7 +13,7 @@
 </head>
 
 <body class="bg-ligth">
-    <nav class="navbar navbar-expand navbar-dark bg-dark microtel-nav">
+    <nav class="navbar navbar-expand navbar-dark sticky-top bg-dark microtel-nav">
         <a class="navbar-brand microtel-title" href="{% url 'home' %}">
             Microtel club Torcy
         </a>
@@ -65,11 +65,13 @@
         </ul>
     </nav>
 
-    <main class="px-5 pt-1" role="main">
-        <div class="container">
+    <main class="justify-content-center d-flex microtel-main" role="main">
+        <div class="col"></div>
+        <div class="container-fluid m-0 pt-1 px-3 col-12 col-md-10 col-lg-8 col-xl-6 bg-white border-left border-right">
             {% block content %}
             {% endblock %}
         </div>
+        <div class="col"></div>
     </main>
 
     {% block modals %}

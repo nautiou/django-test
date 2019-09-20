@@ -15,6 +15,12 @@
     margin-bottom: 0px;
 }
 
-[role=main] {
-    margin-top: 50px;
+.microtel-main {
+    min-height: 100vh;
+    background-color: #fbfbfb;
+}
+
+.microtel-main h1 {
+    border-bottom: 1px solid #e3e3e3;
+    margin-bottom: 1rem;
 }

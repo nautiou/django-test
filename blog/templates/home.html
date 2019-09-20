@@ -1,21 +1,4 @@
-
-{% extends 'blog/base.html' %}
-
-{% block login %}
-{% if user.is_authenticated  %}
-    <p class="nav-link">
-        <span class="text-white mr-3">Bonjour, {{ user.username }}</span>
-        <a href="{% url 'logout' %}"><i data-feather="log-out"></i></a>
-    </p>
-{% else %}
-    <!-- Button trigger modal -->
-    <a class="nav-link" href="" data-toggle="modal" data-target="#modalLogIn">
-        <i data-feather="log-in"></i>
-        Se connecter
-    </a>
-{% endif %}
-{% endblock %}
-
+{% extends 'layouts/base.html' %}
 
 {% block modals %}
 <!-- Modals -->

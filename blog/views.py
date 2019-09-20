@@ -42,25 +42,25 @@ def logout_view(request):
 
 
 def initiation(request):
-    return render(request, 'blog/initiation.html', {'active': 'initiation'})
+    return render(request, 'initiation.html', {'active': 'initiation'})
 
 
 def evenements(request):
     events = Event.objects.all
-    return render(request, 'blog/evenements.html', {'active': 'evenements', 'events': events, 'event_form': EventForm})
+    return render(request, 'evenements.html', {'active': 'evenements', 'events': events, 'event_form': EventForm})
 
 
 def cotisation(request):
-    return render(request, 'blog/cotisation.html', {'active': 'cotisation'})
+    return render(request, 'cotisation.html', {'active': 'cotisation'})
 
 
 def donateur(request):
-    return render(request, 'blog/donateur.html', {'active': 'donateur'})
+    return render(request, 'donateur.html', {'active': 'donateur'})
 
 
 def contact(request):
-    return render(request, 'blog/contact.html', {'active': 'contact'})
+    return render(request, 'contact.html', {'active': 'contact'})
 
 
 def torcy(request):
-    return render(request, 'blog/torcy.html', {'active': 'torcy'})
+    return render(request, 'torcy.html', {'active': 'torcy'})

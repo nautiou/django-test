@@ -24,8 +24,9 @@ def create_user(request):
 
 
 def create_event(request):
-    event = EventForm(request.POST)
-    event.save()
+    event = Event()
+    if event.create(request):
+        event.save()
     return evenements(request)
 
 

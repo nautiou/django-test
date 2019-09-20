@@ -6,10 +6,50 @@
 <div class="px-3">
 
         {% if perms.add_event %}
-        <button class="btn btn-block btn-success mb-3" role="button" data-toggle="modal" data-target="#modalEvent">
-            <i class="mr-2" data-feather="plus-circle"></i>
-            Ajouter un Evenement
-        </button>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+
+
+        <div class="card p-3">
+            <div class="card-body">
+                <h5 class="card-title">Creer un nouvel evenement</h5>
+                <form action="create_event" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="title">Titre</label>
+                        <input class="form-control" id="title" type="text" name="title">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="summernote">Description</label>
+                        <textarea class="form-control" id="summernote" name="text"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="begin_date">Date de début</label>
+                        <input class="form-control" id="begin_date" type="datetime" name="begin_date">
+                    </div>
+
+                    <div class="form-group form-check">
+                        <input class="form-check-input" id="complete_day" type="checkbox" name="complete_day">
+                        <label class="form-check-label" for="complete_day">Journee complete</label>
+                    </div>
+
+                    <input type="submit" value="Publier">
+                </form>
+            </div>
+        </div>
+        <script>
+          $('#summernote').summernote({
+            placeholder: 'Hello bootstrap 4',
+            tabsize: 2,
+            height: 100
+          });
+        </script>
         {% endif %}
 
         {% for event in events %}
@@ -32,23 +72,4 @@
 
     </div>
 
-<div class="modal fade" id="modalEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-      <form method="post" action="createevent">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Connexion</h5>
-          </div>
-          <div class="modal-body">
-              {% csrf_token %}
-              {{ event_form }}
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-            <button type="submit" class="btn btn-primary">Publier</button>
-          </div>
-        </div>
-      </form>
-  </div>
-</div>
 {% endblock %}

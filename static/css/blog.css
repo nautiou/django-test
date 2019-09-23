@@ -1,3 +1,7 @@
+body {
+    background-color: #183446;
+}
+
 .microtel-nav {
     padding: 5px 15px;
 }
@@ -8,6 +12,13 @@
     padding: 0;
 }
 
+.microtel-hero {
+    background-image: url('/static/keep.jpg');
+    background-position: center center;
+    background-repeat: none;
+    background-size: cover;
+}
+
 .microtel-event {
     margin-bottom: 1rem;
 }
@@ -15,6 +26,26 @@
     margin-bottom: 0px;
 }
 
-[role=main] {
-    margin-top: 50px;
+.microtel-footer {
+    background-color: #183446;
+    color: rgba(255, 255, 255, .5)
+}
+
+.microtel-footer .title {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.microtel-footer p {
+    margin-bottom: 0;
+}
+
+.microtel-footer a {
+    color: rgba(255, 255, 255, .8);
+}
+
+.feather-16{
+    width: 16px;
+    height: 16px;
 }
